@@ -3,6 +3,9 @@ import 'package:emergency_app/Presentation/Ui/widget/Appbar.dart';
 import 'package:emergency_app/Presentation/Ui/widget/HomeCard.dart';
 import 'package:flutter/material.dart';
 
+import 'FireAndSefety.dart';
+import 'HealthCareScreen.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -19,19 +22,25 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 20,),
-            Text("Emergency Assistance",style:
+            const SizedBox(height: 20,),
+            const Text("Emergency Assistance",style:
             TextStyle(fontSize: 16,fontWeight: FontWeight.bold ,color: Colors.grey ),),
-            SizedBox(height: 20,),
-            Wrap(
+            const SizedBox(height: 20,),
+             Wrap(
               spacing: 15,
               runSpacing: 15,
               children: [
                 HomeCard(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const HealthCareScreen()));
+                  },
                   image: AssatsLocation.hospitalPNG,
                   text: "HealthCare",
                 ),
                 HomeCard(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const FireAndSafety()));
+                  },
                   image: AssatsLocation.firePng,
                   text: "Fire And Safety",
                 ),
@@ -47,13 +56,13 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
 
             ),
-            SizedBox(height: 20,),
-            Text("Aluart Your  comtact in case of emergency",style:TextStyle(
+            const SizedBox(height: 20,),
+            const Text("Aluart Your  comtact in case of emergency",style:TextStyle(
                 fontSize: 16,fontWeight: FontWeight.bold ,color: Colors.grey ),),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Container(
-              height: 80,
-              width: 80,
+              height: 100,
+              width: 100,
               decoration: BoxDecoration(
                 color: Colors.redAccent,
                 borderRadius: BorderRadius.circular(100),
