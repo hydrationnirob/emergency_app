@@ -17,7 +17,6 @@ class HomeCard extends StatelessWidget {
         height: 180,
         width: 180,
         child: Card(
-
           color: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
